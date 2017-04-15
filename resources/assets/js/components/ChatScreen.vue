@@ -2,23 +2,23 @@
     <div>
     <div class="chat">
         <div class="chat-history">
-            <ul>
-                <li v-for='message in messages'>
-                    <div class="message-data">
-                        <span class="message-data-name">
-                            <span v-text="message.user" />
+            <div class="media" v-for='message in messages'>
+                <div class="media-left">
+                    <img :src="message.user.avatar" width="40px" height="40px">
+                </div>
+                <div class="media-body">
+                    <!-- <div class="media-heading">{{ message.user.name }}</div> -->
+                    <div style="display: block">
+                        <span class="message my-message" :style="{background: isMe(message.user)}">
+                            {{ message.text }}
                         </span>
-                        <span class="message-data-time"></span>
                     </div>
-                    <div class="message my-message" v-bind:style="{ background: '#' + intToRGB(hashCode(message.user)) ,  }">
-                        {{ message.text }}
-                    </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
-        <div class="chat-message clearfix">
-             <textarea @keyup.enter="postMessage()"  v-model="message"></textarea>
-             <button @click="postMessage()" class="btn btn-success">Plaats bericht</button>
+        <div class="input-group chat-message clearfix">
+            <input type="text" class="form-control" v-model="message" @keyup.enter="postMessage">
+            <div class="btn input-group-addon" @click="postMessage"><i class="fa fa-paper-plane"></i>Send</div>
         </div>
         </div>
     </div>
@@ -39,9 +39,11 @@
         },
         methods: {
             postMessage() {
+                if (this.message == '') {
+                    return false;
+                }
                 axios.post('/postmessage', {'message': this.message}).then((response) => {
                     this.message = '';
-                }, (response) => {
                 });
             },
             hashCode(str) { // java String#hashCode
@@ -52,11 +54,11 @@
                 return hash;
             },
             intToRGB(i){
-                var c = (i & 0x00FFFFFF)
-                    .toString(16)
-                    .toUpperCase();
-
+                var c = (i & 0x00FFFFFF).toString(16).toUpperCase();
                 return "00000".substring(0, 6 - c.length) + c;
+            },
+            isMe(user) {
+                return Laravel.user.name == user.name ? "#b2e281" : "#fff";
             }
         }
     }

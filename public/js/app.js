@@ -12138,9 +12138,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         postMessage: function postMessage() {
             var _this2 = this;
 
+            if (this.message == '') {
+                return false;
+            }
             axios.post('/postmessage', { 'message': this.message }).then(function (response) {
                 _this2.message = '';
-            }, function (response) {});
+            });
         },
         hashCode: function hashCode(str) {
             // java String#hashCode
@@ -12152,8 +12155,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         intToRGB: function intToRGB(i) {
             var c = (i & 0x00FFFFFF).toString(16).toUpperCase();
-
             return "00000".substring(0, 6 - c.length) + c;
+        },
+        isMe: function isMe(user) {
+            return Laravel.user.name == user.name ? "#b2e281" : "#fff";
         }
     }
 });
@@ -36703,53 +36708,63 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "chat"
   }, [_c('div', {
     staticClass: "chat-history"
-  }, [_c('ul', _vm._l((_vm.messages), function(message) {
-    return _c('li', [_c('div', {
-      staticClass: "message-data"
-    }, [_c('span', {
-      staticClass: "message-data-name"
-    }, [_c('span', {
-      domProps: {
-        "textContent": _vm._s(message.user)
+  }, _vm._l((_vm.messages), function(message) {
+    return _c('div', {
+      staticClass: "media"
+    }, [_c('div', {
+      staticClass: "media-left"
+    }, [_c('img', {
+      attrs: {
+        "src": message.user.avatar,
+        "width": "40px",
+        "height": "40px"
       }
-    })]), _vm._v(" "), _c('span', {
-      staticClass: "message-data-time"
     })]), _vm._v(" "), _c('div', {
+      staticClass: "media-body"
+    }, [_c('div', {
+      staticStyle: {
+        "display": "block"
+      }
+    }, [_c('span', {
       staticClass: "message my-message",
       style: ({
-        background: '#' + _vm.intToRGB(_vm.hashCode(message.user)),
+        background: _vm.isMe(message.user)
       })
-    }, [_vm._v("\n                    " + _vm._s(message.text) + "\n                ")])])
-  }))]), _vm._v(" "), _c('div', {
-    staticClass: "chat-message clearfix"
-  }, [_c('textarea', {
+    }, [_vm._v("\n                        " + _vm._s(message.text) + "\n                    ")])])])])
+  })), _vm._v(" "), _c('div', {
+    staticClass: "input-group chat-message clearfix"
+  }, [_c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
       value: (_vm.message),
       expression: "message"
     }],
+    staticClass: "form-control",
+    attrs: {
+      "type": "text"
+    },
     domProps: {
       "value": (_vm.message)
     },
     on: {
       "keyup": function($event) {
         if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
-        _vm.postMessage()
+        _vm.postMessage($event)
       },
       "input": function($event) {
         if ($event.target.composing) { return; }
         _vm.message = $event.target.value
       }
     }
-  }), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-success",
+  }), _vm._v(" "), _c('div', {
+    staticClass: "btn input-group-addon",
     on: {
-      "click": function($event) {
-        _vm.postMessage()
-      }
+      "click": _vm.postMessage
     }
-  }, [_vm._v("Plaats bericht")])])])])
+  }, [_c('i', {
+    staticClass: "fa fa-paper-plane"
+  }), _vm._v("Send")])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

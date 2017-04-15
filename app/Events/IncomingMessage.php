@@ -32,7 +32,7 @@ class IncomingMessage implements ShouldBroadcast
     public function broadcastWith()
     {
         return [
-            'user' => $this->user->name,
+            'user' => $this->user,
             'text' => $this->message,
         ];
     }
