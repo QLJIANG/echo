@@ -43,9 +43,14 @@ import Echo from "laravel-echo"
 
 window.Pusher = require('pusher-js');
 
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: window.Laravel.pusher,
+//     cluster: 'ap1',
+//     encrypted: true
+// });
+
 window.Echo = new Echo({
-    broadcaster: 'pusher',
-    key: window.Laravel.pusher,
-    cluster: 'ap1',
-    encrypted: true
+    broadcaster: 'socket.io',
+    host: window.location.hostname + ':6001'
 });

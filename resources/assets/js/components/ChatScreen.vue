@@ -1,28 +1,26 @@
 <template>
     <div>
     <div class="chat">
-            <div class="chat-history">
-                    <ul>
-                         <li v-for='message in messages'>
-                                        <div class="message-data">
-                                            <span class="message-data-name">
-                                                <span v-text="message.user" />
-                                            </span>
-                                            <span class="message-data-time">
-                                                
-                                            </span>
-                                        </div>
-                                        <div class="message my-message" v-bind:style="{ background: '#' + intToRGB(hashCode(message.user)) ,  }">
-                                            {{ message.text }} 
-                                        </div>
-                        </li>
-                     </ul>
-             </div>
-             <div class="chat-message clearfix">
+        <div class="chat-history">
+            <ul>
+                <li v-for='message in messages'>
+                    <div class="message-data">
+                        <span class="message-data-name">
+                            <span v-text="message.user" />
+                        </span>
+                        <span class="message-data-time"></span>
+                    </div>
+                    <div class="message my-message" v-bind:style="{ background: '#' + intToRGB(hashCode(message.user)) ,  }">
+                        {{ message.text }}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="chat-message clearfix">
              <textarea @keyup.enter="postMessage()"  v-model="message"></textarea>
              <button @click="postMessage()" class="btn btn-success">Plaats bericht</button>
-            </div>
-            </div>
+        </div>
+        </div>
     </div>
 </template>
 
@@ -35,12 +33,10 @@
             }
         },
         mounted() {
-            Echo.channel('messages')
-                .listen('.messagePosted', (data) => {
-                    this.messages.push(data);
-                });
+            Echo.channel('messages').listen('.messagePosted', (data) => {
+                this.messages.push(data);
+            });
         },
-
         methods: {
             postMessage() {
                 axios.post('/postmessage', {'message': this.message}).then((response) => {

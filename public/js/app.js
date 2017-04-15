@@ -12118,8 +12118,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -12135,7 +12133,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             _this.messages.push(data);
         });
     },
-
 
     methods: {
         postMessage: function postMessage() {
@@ -12213,11 +12210,16 @@ window.axios.defaults.headers.common = {
 
 window.Pusher = __webpack_require__(35);
 
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: window.Laravel.pusher,
+//     cluster: 'ap1',
+//     encrypted: true
+// });
+
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
-  broadcaster: 'pusher',
-  key: window.Laravel.pusher,
-  cluster: 'ap1',
-  encrypted: true
+  broadcaster: 'socket.io',
+  host: window.location.hostname + ':6001'
 });
 
 /***/ }),
@@ -36717,7 +36719,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       style: ({
         background: '#' + _vm.intToRGB(_vm.hashCode(message.user)),
       })
-    }, [_vm._v("\n                                        " + _vm._s(message.text) + " \n                                    ")])])
+    }, [_vm._v("\n                    " + _vm._s(message.text) + "\n                ")])])
   }))]), _vm._v(" "), _c('div', {
     staticClass: "chat-message clearfix"
   }, [_c('textarea', {
