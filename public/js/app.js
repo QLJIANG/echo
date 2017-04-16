@@ -12158,7 +12158,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return "00000".substring(0, 6 - c.length) + c;
         },
         isMe: function isMe(user) {
-            return Laravel.user.name == user.name ? "#b2e281" : "#fff";
+            return Laravel.user.name == user.name;
+        },
+        isNotMe: function isNotMe(user) {
+            return !this.isMe(user);
+        },
+        background: function background(user) {
+            return this.isMe(user) ? "#b2e281" : "#fff";
+        },
+        float: function float(user) {
+            return this.isMe(user) ? "right" : "left";
         }
     }
 });
@@ -36704,14 +36713,17 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "chat"
+  return _c('div', {
+    staticClass: "chat",
+    staticStyle: {
+      "margin-top": "-22px"
+    }
   }, [_c('div', {
     staticClass: "chat-history"
   }, _vm._l((_vm.messages), function(message) {
     return _c('div', {
       staticClass: "media"
-    }, [_c('div', {
+    }, [(_vm.isNotMe(message.user)) ? _c('div', {
       staticClass: "media-left"
     }, [_c('img', {
       attrs: {
@@ -36719,18 +36731,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "width": "40px",
         "height": "40px"
       }
-    })]), _vm._v(" "), _c('div', {
+    })]) : _vm._e(), _vm._v(" "), _c('div', {
       staticClass: "media-body"
     }, [_c('div', {
       staticStyle: {
         "display": "block"
-      }
+      },
+      style: ({
+        textAlign: _vm.float(message.user)
+      })
     }, [_c('span', {
       staticClass: "message my-message",
       style: ({
-        background: _vm.isMe(message.user)
+        background: _vm.background(message.user)
       })
-    }, [_vm._v("\n                        " + _vm._s(message.text) + "\n                    ")])])])])
+    }, [_vm._v("\n                        " + _vm._s(message.text) + "\n                    ")])])]), _vm._v(" "), (_vm.isMe(message.user)) ? _c('div', {
+      staticClass: "media-right"
+    }, [_c('img', {
+      attrs: {
+        "src": message.user.avatar,
+        "width": "40px",
+        "height": "40px"
+      }
+    })]) : _vm._e()])
   })), _vm._v(" "), _c('div', {
     staticClass: "input-group chat-message clearfix"
   }, [_c('input', {
@@ -36764,7 +36787,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('i', {
     staticClass: "fa fa-paper-plane"
-  }), _vm._v("Send")])])])])
+  }), _vm._v("Send")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
