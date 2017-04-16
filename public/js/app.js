@@ -12169,6 +12169,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         float: function float(user) {
             return this.isMe(user) ? "right" : "left";
         }
+    },
+    computed: {
+        chatHeight: function chatHeight() {
+            return document.body.clientHeight - 36;
+        }
     }
 });
 
@@ -36714,12 +36719,12 @@ module.exports = function normalizeComponent (
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "chat",
-    staticStyle: {
-      "margin-top": "-22px"
-    }
+    staticClass: "chat"
   }, [_c('div', {
-    staticClass: "chat-history"
+    staticClass: "chat-history",
+    style: ({
+      height: _vm.chatHeight
+    })
   }, _vm._l((_vm.messages), function(message) {
     return _c('div', {
       staticClass: "media"
@@ -36755,7 +36760,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     })]) : _vm._e()])
   })), _vm._v(" "), _c('div', {
-    staticClass: "input-group chat-message clearfix"
+    staticClass: "input-group chat-message clearfix",
+    staticStyle: {
+      "position": "absolute",
+      "bottom": "0"
+    }
   }, [_c('input', {
     directives: [{
       name: "model",

@@ -1,6 +1,6 @@
 <template>
-    <div class="chat" style="margin-top: -22px;">
-        <div class="chat-history">
+    <div class="chat">
+        <div class="chat-history" :style="{height: chatHeight}">
             <div class="media" v-for='message in messages'>
                 <div class="media-left" v-if="isNotMe(message.user)">
                     <img :src="message.user.avatar" width="40px" height="40px">
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="input-group chat-message clearfix">
+        <div class="input-group chat-message clearfix" style="position:absolute;bottom:0;">
             <input type="text" class="form-control" v-model="message" @keyup.enter="postMessage">
             <div class="btn input-group-addon" @click="postMessage"><i class="fa fa-paper-plane"></i>Send</div>
         </div>
@@ -68,6 +68,11 @@
             },
             float(user) {
                 return this.isMe(user) ? "right" : "left";
+            }
+        },
+        computed: {
+            chatHeight() {
+                return document.body.clientHeight - 36;
             }
         }
     }

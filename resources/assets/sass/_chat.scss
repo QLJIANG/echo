@@ -52,7 +52,6 @@ $gray: #92959E;
 .chat {
   width: 100%;
   float: left;
-  background: #EEEEEE;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   color: #434651;
@@ -84,14 +83,10 @@ $gray: #92959E;
   .chat-history {
     padding: 10px 10px;
     overflow-y: scroll;
-    height: 550px;
-    .message-data {
-      margin-bottom: 5px;
-    }
-    .message-data-time {
-      color: lighten($gray, 8%);
-      padding-left: 6px;
-    }
+    position: absolute;
+    top: 0px;
+    bottom: 36px;
+    display: block;
     .message {
       padding: 9px 13px;
       line-height: 40px;
