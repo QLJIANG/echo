@@ -12133,7 +12133,7 @@ module.exports = function spread(callback) {
             _this.messages.push(data);
         });
         $('input[type="text"]').on('click', function () {
-            this.scrollIntoViewIfNeeded();
+            $("body").scrollTop(document.body.scrollHeight);
         });
     },
     updated: function updated() {
@@ -36733,11 +36733,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     })]) : _vm._e()])
   })), _vm._v(" "), _c('div', {
-    staticClass: "input-group chat-message clearfix",
-    staticStyle: {
-      "position": "absolute",
-      "bottom": "0"
-    }
+    staticClass: "input-group chat-message"
   }, [_c('input', {
     directives: [{
       name: "model",

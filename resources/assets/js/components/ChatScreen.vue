@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="input-group chat-message clearfix" style="position:absolute;bottom:0;">
+        <div class="input-group chat-message">
             <input type="text" class="form-control" v-model="message" @keyup.enter="postMessage">
             <div class="btn input-group-addon" @click="postMessage">&nbsp&nbsp&nbsp<i class="fa fa-paper-plane"></i>&nbsp&nbsp&nbsp</div>
         </div>
@@ -37,7 +37,7 @@
                 this.messages.push(data);
             });
             $('input[type="text"]').on('click', function () {
-              this.scrollIntoViewIfNeeded();
+                $("body").scrollTop(document.body.scrollHeight);
             });
         },
         updated() {

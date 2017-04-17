@@ -38,6 +38,8 @@ $orange: #FF672E;
     }
   }
   .chat-message {
+    position:absolute;
+    bottom:0;
     .input-group-addon {
       color: $black;
       background: $orange;
