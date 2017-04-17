@@ -1,13 +1,13 @@
 <template>
     <div class="chat">
-        <div class="chat-history" :style="{height: chatHeight}">
+        <div class="chat-history">
             <div class="media" v-for='message in messages'>
-                <div class="media-left" v-if="isNotMe(message.user)">
+                <div class="media-left" v-if="!isMe(message.user)">
                     <img :src="message.user.avatar" width="40px" height="40px">
                 </div>
                 <div class="media-body">
-                    <div style="display: block" :style="{ textAlign: float(message.user) }">
-                        <span class="message my-message" :style="{ background: background(message.user) }">
+                    <div :class="[isMe(message.user) ? 'myMessage' : 'otherMessage']">
+                        <span class="message">
                             {{ message.text }}
                         </span>
                     </div>
@@ -19,7 +19,7 @@
         </div>
         <div class="input-group chat-message clearfix" style="position:absolute;bottom:0;">
             <input type="text" class="form-control" v-model="message" @keyup.enter="postMessage">
-            <div class="btn input-group-addon" @click="postMessage"><i class="fa fa-paper-plane"></i>Send</div>
+            <div class="btn input-group-addon" @click="postMessage">&nbsp&nbsp&nbsp<i class="fa fa-paper-plane"></i>&nbsp&nbsp&nbsp</div>
         </div>
     </div>
 </template>
@@ -37,6 +37,9 @@
                 this.messages.push(data);
             });
         },
+        updated() {
+            $(".chat-history").scrollTop(document.body.scrollHeight);
+        },
         methods: {
             postMessage() {
                 if (this.message == '') {
@@ -46,33 +49,11 @@
                     this.message = '';
                 });
             },
-            hashCode(str) { // java String#hashCode
-                var hash = 0;
-                for (var i = 0; i < str.length; i++) {
-                   hash = str.charCodeAt(i) + ((hash << 5) - hash);
-                }
-                return hash;
-            },
-            intToRGB(i){
-                var c = (i & 0x00FFFFFF).toString(16).toUpperCase();
-                return "00000".substring(0, 6 - c.length) + c;
-            },
             isMe(user) {
                 return Laravel.user.name == user.name;
             },
-            isNotMe(user) {
-                return ! this.isMe(user);
-            },
-            background(user) {
-                return this.isMe(user) ? "#b2e281" : "#fff";
-            },
             float(user) {
                 return this.isMe(user) ? "right" : "left";
-            }
-        },
-        computed: {
-            chatHeight() {
-                return document.body.clientHeight - 36;
             }
         }
     }

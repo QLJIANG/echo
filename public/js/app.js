@@ -12091,7 +12091,7 @@ module.exports = function spread(callback) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* WEBPACK VAR INJECTION */(function($) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
@@ -12133,6 +12133,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             _this.messages.push(data);
         });
     },
+    updated: function updated() {
+        $(".chat-history").scrollTop(document.body.scrollHeight);
+    },
 
     methods: {
         postMessage: function postMessage() {
@@ -12145,37 +12148,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.message = '';
             });
         },
-        hashCode: function hashCode(str) {
-            // java String#hashCode
-            var hash = 0;
-            for (var i = 0; i < str.length; i++) {
-                hash = str.charCodeAt(i) + ((hash << 5) - hash);
-            }
-            return hash;
-        },
-        intToRGB: function intToRGB(i) {
-            var c = (i & 0x00FFFFFF).toString(16).toUpperCase();
-            return "00000".substring(0, 6 - c.length) + c;
-        },
         isMe: function isMe(user) {
             return Laravel.user.name == user.name;
-        },
-        isNotMe: function isNotMe(user) {
-            return !this.isMe(user);
-        },
-        background: function background(user) {
-            return this.isMe(user) ? "#b2e281" : "#fff";
         },
         float: function float(user) {
             return this.isMe(user) ? "right" : "left";
         }
-    },
-    computed: {
-        chatHeight: function chatHeight() {
-            return document.body.clientHeight - 36;
-        }
     }
 });
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
 /* 31 */
@@ -36721,14 +36702,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "chat"
   }, [_c('div', {
-    staticClass: "chat-history",
-    style: ({
-      height: _vm.chatHeight
-    })
+    staticClass: "chat-history"
   }, _vm._l((_vm.messages), function(message) {
     return _c('div', {
       staticClass: "media"
-    }, [(_vm.isNotMe(message.user)) ? _c('div', {
+    }, [(!_vm.isMe(message.user)) ? _c('div', {
       staticClass: "media-left"
     }, [_c('img', {
       attrs: {
@@ -36739,17 +36717,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })]) : _vm._e(), _vm._v(" "), _c('div', {
       staticClass: "media-body"
     }, [_c('div', {
-      staticStyle: {
-        "display": "block"
-      },
-      style: ({
-        textAlign: _vm.float(message.user)
-      })
+      class: [_vm.isMe(message.user) ? 'myMessage' : 'otherMessage']
     }, [_c('span', {
-      staticClass: "message my-message",
-      style: ({
-        background: _vm.background(message.user)
-      })
+      staticClass: "message"
     }, [_vm._v("\n                        " + _vm._s(message.text) + "\n                    ")])])]), _vm._v(" "), (_vm.isMe(message.user)) ? _c('div', {
       staticClass: "media-right"
     }, [_c('img', {
@@ -36794,9 +36764,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.postMessage
     }
-  }, [_c('i', {
+  }, [_vm._v("   "), _c('i', {
     staticClass: "fa fa-paper-plane"
-  }), _vm._v("Send")])])])
+  }), _vm._v("   ")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
