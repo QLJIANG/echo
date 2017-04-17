@@ -12132,6 +12132,9 @@ module.exports = function spread(callback) {
         Echo.channel('messages').listen('.messagePosted', function (data) {
             _this.messages.push(data);
         });
+        $('input[type="text"]').on('click', function () {
+            this.scrollIntoViewIfNeeded();
+        });
     },
     updated: function updated() {
         $(".chat-history").scrollTop(document.body.scrollHeight);

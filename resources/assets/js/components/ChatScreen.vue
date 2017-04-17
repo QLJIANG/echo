@@ -36,6 +36,9 @@
             Echo.channel('messages').listen('.messagePosted', (data) => {
                 this.messages.push(data);
             });
+            $('input[type="text"]').on('click', function () {
+              this.scrollIntoViewIfNeeded();
+            });
         },
         updated() {
             $(".chat-history").scrollTop(document.body.scrollHeight);
