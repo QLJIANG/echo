@@ -37,8 +37,7 @@
                 this.messages.push(data);
             });
             $('input[type="text"]').on('click', function () {
-                $("body").scrollTop(10);
-                $(".chat-history").scrollTop(document.body.scrollHeight);
+                $(".chat-history").scrollTop(document.documentElement.clientHeight);
             });
         },
         updated() {
