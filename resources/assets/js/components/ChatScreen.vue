@@ -37,7 +37,8 @@
                 this.messages.push(data);
             });
             $('input[type="text"]').on('click', function () {
-                $("body").scrollTop(document.body.scrollHeight);
+                $("body").scrollTop(10);
+                console.log('click');
             });
         },
         updated() {
