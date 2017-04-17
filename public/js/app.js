@@ -12132,10 +12132,10 @@ module.exports = function spread(callback) {
         Echo.channel('messages').listen('.messagePosted', function (data) {
             _this.messages.push(data);
         });
-        $('input[type="text"]').on('click', function () {
-            $("body").scrollTop(10);
-            console.log('click');
-        });
+        // $('input[type="text"]').on('click', function () {
+        //     $("body").scrollTop(10);
+        //     console.log('click');
+        // });
     },
     updated: function updated() {
         $(".chat-history").scrollTop(document.body.scrollHeight);

@@ -36,10 +36,10 @@
             Echo.channel('messages').listen('.messagePosted', (data) => {
                 this.messages.push(data);
             });
-            $('input[type="text"]').on('click', function () {
-                $("body").scrollTop(10);
-                console.log('click');
-            });
+            // $('input[type="text"]').on('click', function () {
+            //     $("body").scrollTop(10);
+            //     console.log('click');
+            // });
         },
         updated() {
             $(".chat-history").scrollTop(document.body.scrollHeight);
