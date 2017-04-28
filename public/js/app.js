@@ -48826,7 +48826,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "media-body"
     }, [_c('h4', {
       staticClass: "media-heading"
-    }, [_vm._v(_vm._s(_vm.user(message).name))]), _vm._v("\n                " + _vm._s(message.body) + "\n            ")])])], 1)
+    }, [_vm._v(_vm._s(_vm.user(message).name)), _c('span', {
+      staticClass: "pull-right",
+      staticStyle: {
+        "font-size": "12px"
+      }
+    }, [_vm._v(_vm._s(message.created_at))])]), _vm._v("\n                " + _vm._s(message.body) + "\n            ")])])], 1)
   }))
 },staticRenderFns: []}
 module.exports.render._withStripped = true

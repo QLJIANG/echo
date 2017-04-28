@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Auth;
+use Carbon\Carbon;
 
 class Message extends Model
 {
@@ -31,5 +32,10 @@ class Message extends Model
     public function scopeMy($query)
     {
         return $query->where('from_user_id', Auth::id())->orWhere('to_user_id', Auth::id());
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->diffForHumans();
     }
 }

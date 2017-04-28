@@ -6,7 +6,7 @@
                     <img :src="user(message).avatar" width="40px" height="40px">
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading">{{ user(message).name }}</h4>
+                    <h4 class="media-heading">{{ user(message).name }}<span style="font-size: 12px;" class="pull-right">{{ message.created_at }}</span></h4>
                     {{ message.body }}
                 </div>
             </router-link>

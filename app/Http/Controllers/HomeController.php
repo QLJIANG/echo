@@ -21,7 +21,7 @@ class HomeController extends Controller
 
     public function message()
     {
-        $messages = Message::my()->get()->sortByDesc('created_at')->unique(function ($message) {
+        $messages = Message::my()->latest()->get()->unique(function ($message) {
             return $message->from_user_id * $message->to_user_id;
         })->load('from', 'to');
 
