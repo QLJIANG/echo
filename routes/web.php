@@ -11,7 +11,10 @@
 |
 */
 Route::post('/postmessage', 'PostController@handle');
-
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', 'HomeController@index');
+    Route::get('/message', 'HomeController@message');
+    Route::get('/message/{user}', 'MessageController@index');
+    Route::post('/message', 'MessageController@store');
+});
 Auth::routes();
-
-Route::get('/', 'HomeController@index');

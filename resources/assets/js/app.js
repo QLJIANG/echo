@@ -13,11 +13,27 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('chat-screen', require('./components/ChatScreen.vue'));
+// Vue.component('ChatScreen', require('./components/ChatScreen.vue'));
+// Vue.component('UserItem', require('./components/UserItem.vue'));
+
+import ChatScreen from './components/ChatScreen.vue';
+import UserItem from './components/UserItem.vue';
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+
+const routes = [
+    {path: '/', component: UserItem, name: 'user-item'},
+    {path: '/chat/:id', component: ChatScreen, name: 'chat-screen'}
+];
+
+const router = new VueRouter({
+    routes
+});
 
 const app = new Vue({
     el: '#app',
     data: {
         user: Laravel.user,
-    }
+    },
+    router
 });

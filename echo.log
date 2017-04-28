@@ -1,0 +1,263 @@
+
+L A R A V E L  E C H O  S E R V E R
+
+version 1.2.8
+
+⚠ Starting server in DEV mode...
+
+events.js:163
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::6001
+    at Object.exports._errnoException (util.js:1034:11)
+    at exports._exceptionWithHostPort (util.js:1057:20)
+    at Server._listen2 (net.js:1265:14)
+    at listen (net.js:1301:10)
+    at Server.listen (net.js:1392:7)
+    at Server.httpServer (/usr/local/lib/node_modules/laravel-echo-server/dist/server.js:57:20)
+    at /usr/local/lib/node_modules/laravel-echo-server/dist/server.js:32:31
+    at Server.serverProtocol (/usr/local/lib/node_modules/laravel-echo-server/dist/server.js:25:16)
+    at /usr/local/lib/node_modules/laravel-echo-server/dist/server.js:16:19
+    at Server.init (/usr/local/lib/node_modules/laravel-echo-server/dist/server.js:15:16)
+    at /usr/local/lib/node_modules/laravel-echo-server/dist/echo-server.js:36:26
+    at EchoServer.run (/usr/local/lib/node_modules/laravel-echo-server/dist/echo-server.js:32:16)
+    at /usr/local/lib/node_modules/laravel-echo-server/dist/cli/cli.js:103:18
+    at FSReqWrap.oncomplete (fs.js:114:15)
+
+L A R A V E L  E C H O  S E R V E R
+
+version 1.2.8
+
+⚠ Starting server in DEV mode...
+
+events.js:163
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::6001
+    at Object.exports._errnoException (util.js:1034:11)
+    at exports._exceptionWithHostPort (util.js:1057:20)
+    at Server._listen2 (net.js:1265:14)
+    at listen (net.js:1301:10)
+    at Server.listen (net.js:1392:7)
+    at Server.httpServer (/usr/local/lib/node_modules/laravel-echo-server/dist/server.js:57:20)
+    at /usr/local/lib/node_modules/laravel-echo-server/dist/server.js:32:31
+    at Server.serverProtocol (/usr/local/lib/node_modules/laravel-echo-server/dist/server.js:25:16)
+    at /usr/local/lib/node_modules/laravel-echo-server/dist/server.js:16:19
+    at Server.init (/usr/local/lib/node_modules/laravel-echo-server/dist/server.js:15:16)
+    at /usr/local/lib/node_modules/laravel-echo-server/dist/echo-server.js:36:26
+    at EchoServer.run (/usr/local/lib/node_modules/laravel-echo-server/dist/echo-server.js:32:16)
+    at /usr/local/lib/node_modules/laravel-echo-server/dist/cli/cli.js:103:18
+    at FSReqWrap.oncomplete (fs.js:114:15)
+
+L A R A V E L  E C H O  S E R V E R
+
+version 1.2.8
+
+⚠ Starting server in DEV mode...
+
+✔  Running at localhost on port 6001
+✔  Channels are ready.
+✔  Listening for http events...
+✔  Listening for redis events...
+
+Server ready!
+
+[5:19:02 PM] - 0M3bCcP2umD34HyIAAAB joined channel: messages
+⚠ [6:48:28 PM] - E_8RCIg7dOc5xU8EAAAL could not be authenticated to private-task
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Unable to connect</title>
+    <style>
+      * { margin: 0; -webkit-font-smoothing: antialiased; }
+      body { font-family: Helvetica, sans-serif; font-size: 14px; }
+      .header {
+        background: #f7f7f7;
+        height: 100px;
+      }
+      .header-bottom {
+        margin-top: -95px;
+        background-image: url(data:image/png;base64,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);
+        background-size: 100% 112px;
+        height: 112px;
+      }
+      h2 { padding-left: 40px; font-weight: lighter; margin: 0; line-height: 100px; font-size: 32px; color: #a6a6a6; text-transform: uppercase; }
+      .error-code { margin-right: 10px; color: #7b7b7b; }
+      .surge { background-image: url(data:image/png;base64,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); }
+      .header .logo { float: right; margin-right: 40px; margin-top: 30px; background-size: 40px 40px; width: 40px; height: 40px; }
+      .wrapper { max-width: 666px; margin: 60px auto 60px; padding: 0 20px; }
+      h1 { color: #5c5c5c; font-size: 24px; text-align: center; }
+      .error-detail { margin-top: 60px; font-family: Verdana, sans-serif; color: #5c5c5c; word-break: break-all; }
+      p { margin-bottom: 10px; }
+      a { color: #5c5c5c; }
+      .footer { text-align: center; color: #e3e3e3; margin-bottom: 40px; }
+      .footer .logo { margin: 0 auto 10px; opacity: 0.2; background-size: 32px 32px; width: 32px; height: 32px; -webkit-filter: grayscale(100%); filter: gray; filter: grayscale(100%); }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo surge"></div>
+      <h2>Error</h2>
+    </div>
+    <div class="header-bottom"></div>
+    <div class="wrapper">
+      <h1>Unable to connect</h1>
+      <div class="error-detail"><p>The requested URL could not be retrieved: <br /><b>http://laravel-echo.laravel.dev/broadcasting/auth</b></p><p><br /></p><p>Error descriptions:</p><li>Attempt to connect to host timed out</li></div>     
+    </div>
+    <div class="footer">
+      <div class="logo surge"></div>
+      SGGCDAsyncSocketErrorDomain - 3<br />Generated 26/04/2017, 6:48 PM by Surge Mac/2.2.2
+    </div>
+  </body>
+</html>
+Client can not be authenticated, got HTTP status 503
+[8:24:06 PM] - 74InjPBN2o7s8Of_AAAW joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[8:48:28 PM] - 74InjPBN2o7s8Of_AAAW left channel: messages (transport close)
+[8:48:36 PM] - b3Bqalo1KDa8wjUTAAAX joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[8:49:51 PM] - b3Bqalo1KDa8wjUTAAAX left channel: messages (transport close)
+[8:49:54 PM] - N8zPo_pfx0SvHxcUAAAY joined channel: messages
+[8:30:31 AM] - N8zPo_pfx0SvHxcUAAAY left channel: messages (transport close)
+[8:30:38 AM] - A8SmGuKPLGVbl5MwAAAZ joined channel: messages
+[8:43:06 AM] - A8SmGuKPLGVbl5MwAAAZ left channel: messages (transport close)
+[8:43:14 AM] - N07WNdgTlZo9ljUcAAAa joined channel: messages
+[8:44:08 AM] - N07WNdgTlZo9ljUcAAAa left channel: messages (transport close)
+[8:44:12 AM] - wsoXtt5I4DyyEgHwAAAb joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[8:46:37 AM] - wsoXtt5I4DyyEgHwAAAb left channel: messages (transport close)
+[8:46:42 AM] - tPKc9lzXj7a5l5-wAAAc joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[8:47:51 AM] - tPKc9lzXj7a5l5-wAAAc left channel: messages (transport close)
+[8:47:57 AM] - BOhlNGt3nUgk_3FNAAAd joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[9:10:27 AM] - BOhlNGt3nUgk_3FNAAAd left channel: messages (transport close)
+[9:10:33 AM] - tjWa61D0-NRUJgQbAAAl joined channel: messages
+[9:27:51 AM] - tjWa61D0-NRUJgQbAAAl left channel: messages (transport close)
+[9:27:56 AM] - DgF6wGOlZnB_69rKAAAm joined channel: messages
+[9:28:53 AM] - DgF6wGOlZnB_69rKAAAm left channel: messages (transport close)
+[9:28:57 AM] - TqziEjlMrrTzteGlAAAn joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[9:31:51 AM] - TqziEjlMrrTzteGlAAAn left channel: messages (transport close)
+[9:32:19 AM] - kwawmBvjXw2lEry3AAAo joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[9:49:51 AM] - kwawmBvjXw2lEry3AAAo left channel: messages (transport close)
+[9:49:57 AM] - XY8H0wWJpg6hvkd6AAAp joined channel: messages
+[10:02:50 AM] - U2SCxuFJgtlP2a37AAAq joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[3:19:00 PM] - XY8H0wWJpg6hvkd6AAAp left channel: messages (transport close)
+[3:19:08 PM] - IM3kWIUwQwBNR-zBAAAr joined channel: messages
+[4:10:59 PM] - IM3kWIUwQwBNR-zBAAAr left channel: messages (transport close)
+[4:11:06 PM] - oBcOBrw8K13TDz8mAAAs joined channel: messages
+[4:20:35 PM] - oBcOBrw8K13TDz8mAAAs left channel: messages (transport close)
+[4:20:50 PM] - v6_pbHsIjjAxtfs8AAAt joined channel: messages
+[4:22:41 PM] - v6_pbHsIjjAxtfs8AAAt left channel: messages (transport close)
+[4:22:48 PM] - thZS9iTLijsDIcUMAAAu joined channel: messages
+[5:04:45 PM] - thZS9iTLijsDIcUMAAAu left channel: messages (transport close)
+[5:27:12 PM] - 5Y01I4Jc0wF_rOfYAAAw joined channel: messages
+[11:00:59 PM] - 5Y01I4Jc0wF_rOfYAAAw left channel: messages (transport close)
+[11:54:44 PM] - v4EwnddmwRFI4HuCAAA0 joined channel: messages
+[11:58:43 PM] - v4EwnddmwRFI4HuCAAA0 left channel: messages (transport close)
+[11:58:49 PM] - 0npfufY5VGXdcydmAAA1 joined channel: messages
+[12:16:47 AM] - 0npfufY5VGXdcydmAAA1 left channel: messages (transport close)
+[12:16:56 AM] - iJeKMDlhVz77XSDEAAA2 joined channel: messages
+[12:20:17 AM] - iJeKMDlhVz77XSDEAAA2 left channel: messages (transport close)
+[12:20:20 AM] - YnanWX9_aFbhhx_hAAA3 joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[12:23:18 AM] - 0M3bCcP2umD34HyIAAAB left channel: messages (transport close)
+[12:23:27 AM] - U2SCxuFJgtlP2a37AAAq left channel: messages (transport close)
+[12:24:27 AM] - IZn3LoxUaQPK-b8JAAA5 joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[8:44:10 AM] - YnanWX9_aFbhhx_hAAA3 left channel: messages (transport close)
+[8:44:12 AM] - IZn3LoxUaQPK-b8JAAA5 left channel: messages (transport close)
+[8:44:16 AM] - HfDNvYjY6l9PDmRCAAA6 joined channel: messages
+[8:44:31 AM] - T9fC8eKe9cMLAal8AAA8 joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[8:45:22 AM] - HfDNvYjY6l9PDmRCAAA6 left channel: messages (transport close)
+[8:45:24 AM] - RO6sZIc17-nqegWnAAA9 joined channel: messages
+[8:49:48 AM] - RO6sZIc17-nqegWnAAA9 left channel: messages (transport close)
+[8:51:00 AM] - TBCl1eHQRauOXueaAAA- joined channel: messages
+[8:51:06 AM] - T9fC8eKe9cMLAal8AAA8 left channel: messages (transport close)
+[8:51:07 AM] - NqNLsXqBi9TPisHOAAA_ joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[8:51:17 AM] - NqNLsXqBi9TPisHOAAA_ left channel: messages (transport close)
+[8:51:17 AM] - 0hAu8YtgvGOSoYj8AABA joined channel: messages
+[8:52:54 AM] - 0hAu8YtgvGOSoYj8AABA left channel: messages (transport close)
+[8:52:55 AM] - tlCiznWvC1-EC06vAABB joined channel: messages
+[8:52:59 AM] - TBCl1eHQRauOXueaAAA- left channel: messages (transport close)
+[8:53:04 AM] - 7tNuTPtPPkhXz7mAAABC joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[8:57:59 AM] - tlCiznWvC1-EC06vAABB left channel: messages (transport close)
+[8:58:00 AM] - 33PilMWquOyNiNVgAABD joined channel: messages
+[9:01:35 AM] - 33PilMWquOyNiNVgAABD left channel: messages (transport close)
+[9:01:35 AM] - o8yvEVL0K97EMygYAABE joined channel: messages
+[9:01:36 AM] - 7tNuTPtPPkhXz7mAAABC left channel: messages (transport close)
+[9:01:38 AM] - Lny92LXYZNe0P0dSAABF joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[9:03:04 AM] - Lny92LXYZNe0P0dSAABF left channel: messages (transport close)
+[9:03:06 AM] - StzWPaWM9-PP171hAABG joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[9:05:10 AM] - StzWPaWM9-PP171hAABG left channel: messages (transport close)
+[9:05:12 AM] - Le2mc_JWZhQxHZRhAABH joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[9:05:21 AM] - o8yvEVL0K97EMygYAABE left channel: messages (transport close)
+[9:05:21 AM] - YNQPWVODuy3fiw9UAABI joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+[9:05:50 AM] - YNQPWVODuy3fiw9UAABI left channel: messages (transport close)
+[9:05:50 AM] - Lu7u8gOKiZXgK8ycAABJ joined channel: messages
+[9:05:51 AM] - Le2mc_JWZhQxHZRhAABH left channel: messages (transport close)
+[9:05:53 AM] - bT3eiwJ_U0fQr3E8AABK joined channel: messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages
+Channel: messages
+Event: messagePosted
+CHANNEL messages

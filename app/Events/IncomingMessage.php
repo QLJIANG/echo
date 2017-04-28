@@ -15,26 +15,20 @@ class IncomingMessage implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    protected $user;
-    protected $message;
+    public $from;
+    public $to;
+    public $body;
 
-    public function __construct(User $user, $message)
+    public function __construct(User $from, User $to, $body)
     {
-        $this->user = $user;
-        $this->message = $message;
+        $this->from = $from;
+        $this->to = $to;
+        $this->body = $body;
     }
 
     public function broadcastAs()
     {
         return 'messagePosted';
-    }
-
-    public function broadcastWith()
-    {
-        return [
-            'user' => $this->user,
-            'text' => $this->message,
-        ];
     }
 
     /**

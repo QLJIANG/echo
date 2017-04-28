@@ -9,8 +9,11 @@ class PostController extends Controller
 {
     public function handle(Request $request)
     {
-        event(new IncomingMessage($request->user(), $request->get('message')));
+        event(new IncomingMessage($request->user(), request('message')));
 
-        return response()->json(['user' => $request->user(), 'message' => $request->get('message')]);
+        return [
+            'user' => $request->user(),
+            'message' => request('message')
+        ];
     }
 }
