@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Chat;
 use Auth;
 use App\User;
 use App\Message;
@@ -21,9 +22,7 @@ class HomeController extends Controller
 
     public function message()
     {
-        $messages = Message::my()->latest()->get()->unique(function ($message) {
-            return $message->from_user_id * $message->to_user_id;
-        })->load('from', 'to');
+        $messages = Message::my()->latest()->get()->unique('from_to')->load('from', 'to');
 
         return $messages;
     }

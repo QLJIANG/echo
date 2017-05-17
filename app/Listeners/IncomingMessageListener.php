@@ -30,6 +30,7 @@ class IncomingMessageListener
         Message::create([
             'from_user_id' => $event->from->id,
             'to_user_id' => $event->to->id,
+            'from_to' => $event->from->id * $event->to->id,
             'body' => $event->body,
         ]);
     }

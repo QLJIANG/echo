@@ -56,7 +56,7 @@
                 if (this.body == '') {
                     return false;
                 }
-                axios.post('/message', {to: this.to, body: this.body}).then((response) => {
+                axios.post('/message/'+this.to, {body: this.body}).then((response) => {
                     this.body = '';
                 });
             },

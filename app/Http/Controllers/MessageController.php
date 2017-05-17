@@ -11,20 +11,18 @@ class MessageController extends Controller
 {
     public function index(User $user)
     {
-        return Message::fromUser($user)->with('from', 'to')->latest()->paginate(10);
+        return Message::withUser($user)->with('from', 'to')->latest()->paginate();
     }
 
-    public function store()
+    public function store(User $user)
     {
-        $from = Auth::user();
-        $to = User::find(request('to'));
         $body = request('body');
 
-        event(new IncomingMessage($from, $to, $body));
+        event(new IncomingMessage(Auth::user(), $user, $body));
 
         return [
-            'from' => $from->name,
-            'to' => $to->name,
+            'from' => Auth::user()->name,
+            'to' => $user->name,
             'message' => $body
         ];
     }

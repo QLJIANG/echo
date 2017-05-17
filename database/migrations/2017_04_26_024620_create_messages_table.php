@@ -15,6 +15,7 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('chat_id');
             $table->unsignedInteger('from_user_id');
             $table->unsignedInteger('to_user_id');
             $table->text('body');
@@ -23,6 +24,7 @@ class CreateMessagesTable extends Migration
 
             $table->foreign('from_user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('to_user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('chat_id')->references('id')->on('chats')->onDelete('cascade');
         });
     }
 

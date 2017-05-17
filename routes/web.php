@@ -15,6 +15,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index');
     Route::get('/message', 'HomeController@message');
     Route::get('/message/{user}', 'MessageController@index');
-    Route::post('/message', 'MessageController@store');
+    Route::post('/message/{user}', 'MessageController@store');
 });
 Auth::routes();
