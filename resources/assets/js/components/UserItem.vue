@@ -23,7 +23,7 @@
             }
         },
         mounted () {
-            axios.get('http://laravel-echo.laravel.dev/message').then(response => {
+            axios.get('/message').then(response => {
                 this.messages = response.data;
             });
         },
